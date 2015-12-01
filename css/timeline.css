@@ -1,0 +1,124 @@
+body, p {
+  margin: 0;
+  padding: 0;
+} 
+
+.timeline-container {
+  margin: 0 auto;
+  width: 1000px;
+  background-color: #efefef;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.header {
+  margin-left: 40px;
+  font-size: 24px;
+  font-family: Helvetica;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 100px;
+  font-family: Helvetica;
+}
+
+li {
+  display: block;
+  width: 450px;
+  vertical-align: middle;
+  height: 150px;
+  box-sizing: border-box;
+}
+
+.item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 153px;
+  color: #666666;
+}
+
+.session {
+  margin-left: -40px;
+}
+
+li .description {
+  display: none;
+}
+
+li.active > .description {
+  display: block;
+  width: 300px;
+  position: relative;
+  margin-left: 272px;
+  margin-top: -30px;
+  padding: 20px;
+  float: left;
+  background: #fff;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+.caret-icon {
+  position: absolute;
+  margin-left: -31px;
+  color: white;
+}
+
+.vertical-line{
+  width: 0px;
+  height: 100%;
+  float: left;
+  border: 1px inset;
+  position: absolute;
+  margin-left: 170px;
+  margin-top: 29px;
+  z-index: 1;
+}
+
+.item-wrapper {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  margin-top: -2px;
+}
+
+.command-title {
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.command-subtitle {
+  color: #bfbfbf;
+  font-size: 12px;
+}
+
+.item-icon {
+  color: black;
+}
+
+.command-list-prompt {
+  width: 100%;
+  color: #666666;
+  font-size: 12px;
+  margin-top: 10px;
+  display: block;
+}
+
+.active > .command-list-prompt {
+  display: none;
+}
+
+.command-student-list {
+  display: none;
+}
+
+.active > .command-student-list {
+  display: block;
+  color: #bfbfbf;
+  font-size: 12px;
+}
