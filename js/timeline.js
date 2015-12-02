@@ -17,14 +17,14 @@ $( document ).ready(function() {
 				commandName:'Stop', // human readable command commandType:'lock', 
 				commandType:'stop-circle-o', // font awesome icon name without prefix
 				createdBy:1, // teacher id
-				sentTo:[67,89,100] //studentids
+				sentTo:[67,89] //studentids
 			},
 			{
 				timestamp:1448905500,// timestamp
 				commandName:'Check', // human readable command commandType:'lock', 
 				commandType:'check', // font awesome icon name without prefix
 				createdBy:1, // teacher id
-				sentTo:[67,89,100] //studentids
+				sentTo:[67] //studentids
 			}
 		]
 	}
@@ -59,14 +59,23 @@ $( document ).ready(function() {
 			var commandName = elem.commandName;
 			var commandType = elem.commandType;
 		  var createdBy = elem.createdBy;
+      var createdByArray = [];
+      createdByArray.push(createdBy);
+      var teacherNameArray = [];
+      var teacherName = "";
+		  for(var i = 0; i < teachersArray.length; i++) {
+		  	if (createdByArray.indexOf(teachersArray[i].id) !== -1) {
+		  		teacherName += teachersArray[i].name;
+		  	}
+		  	teacherName
+		  }
 		  var sentToArray = elem.sentTo;
 		  var studentNames = "";
-		  for(var i = 0; i < studentsArray.length; i++) {
-		  	var studentNamesArray = [];
-		  	if (sentToArray.indexOf(studentsArray[i].id) === 0) {
-		  		studentNamesArray.push(studentsArray[i].name)
+		  for(var i = 0; i < sentToArray.length; i++) {
+		  	if (sentToArray.indexOf(studentsArray[i].id) !== -1) {
+		  		studentNames += (studentsArray[i].name + ", ");
 		  	}
-		  	studentNames += studentNamesArray.join("")
+		  	studentNames
 		  }
 		  
 		  output += 
@@ -75,9 +84,13 @@ $( document ).ready(function() {
 		   	'<div class="item timeslot">' + timeslot + '</div>' +
 		   	'<div class="item icon-container">' + '<i class="fa fa-' + commandType + ' fa-2x"' + '></i>' + '</div>' +
 		   	'<div class="item description">' + '<div class="command-title">' + commandName + '</div>' +
-		   	'<div class="command-subtitle">' + 'Sent by ' + createdBy + '</div>' +
-		   	'<div class="command-title">' + 'Sent to ' + studentNames + ' students' + '</div>' +
-		   	'<div class="command-subtitle">' + 'some names' + '</div>' +
+		   	'<div class="command-subtitle">' + 'Sent by ' + teacherName + '</div>' +
+		   	'<div class="command-title">' + 'Sent to ' + sentToArray.length + ' students' + '</div>' +
+		   	'<div class="command-subtitle">' + studentNames + '</div>' +
+		   	'<div class="student-wrapper">' +
+						'<div class="command-list-prompt">(and 14 more)</div>' +
+						'<div class="command-student-list">Nadine, Ravi, Manny, Ram, Samita, Nani, Mike, Penny, Aj, Rajesh, Neetij, Munni</div>' +
+				'</div>' +
 		   '</li></div>' 
 			})
 		  var secondOutput = 
