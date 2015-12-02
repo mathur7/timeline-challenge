@@ -38,6 +38,10 @@ li {
   color: #666666;
 }
 
+.icon-container {
+  color: black;
+}
+
 .session {
   margin-left: -40px;
 }
@@ -72,7 +76,7 @@ li.active > .description {
   float: left;
   border: 1px inset;
   position: absolute;
-  margin-left: 170px;
+  margin-left: 166px;
   margin-top: 29px;
   z-index: 1;
 }
